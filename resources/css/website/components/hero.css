@@ -1,0 +1,4 @@
+/* Hero component styles */
+.hero-gradient {
+    background: linear-gradient(180deg, rgba(15, 31, 61, 0.6) 0%, rgba(10, 22, 40, 0.8) 100%);
+}
