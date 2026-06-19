@@ -156,4 +156,9 @@ class AdmissionResource extends Resource
             'edit' => Pages\EditAdmission::route('/{record}/edit'),
         ];
     }
+
+    public static function canAccess(): bool
+    {
+        return auth()->user()->hasPermissionTo("manage_admissions");
+    }
 }
