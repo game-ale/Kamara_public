@@ -139,25 +139,77 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-navy-800 mt-3 font-heading">What Parents Say</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                @foreach([
-                    ['Kamara School has completely transformed my child\'s approach to learning. The teachers are exceptional.', 'Marta T.', 'Parent, Grade 4'],
-                    ['The balance between academics and extracurriculars is perfect. My daughter thrives here.', 'Daniel A.', 'Parent, Grade 7'],
-                    ['As an alumnus, I can say Kamara laid the foundation for everything I achieved in university.', 'Samuel K.', 'Alumni, Class of 2020'],
-                ] as $testimonial)
+                @forelse($testimonials ?? [] as $testimonial)
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
                     <div class="flex gap-1 mb-4 text-gold-400">★★★★★</div>
-                    <p class="text-gray-700 italic leading-relaxed">"{{ $testimonial[0] }}"</p>
+                    <p class="text-gray-700 italic leading-relaxed">"{{ $testimonial->quote }}"</p>
                     <div class="mt-6 flex items-center gap-3">
                         <div class="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center">
-                            <span class="text-gold-400 font-bold text-sm">{{ substr($testimonial[1], 0, 1) }}</span>
+                            <span class="text-gold-400 font-bold text-sm">{{ substr($testimonial->author_name, 0, 1) }}</span>
                         </div>
                         <div>
-                            <p class="font-semibold text-navy-800 text-sm">{{ $testimonial[1] }}</p>
-                            <p class="text-xs text-slate-600">{{ $testimonial[2] }}</p>
+                            <p class="font-semibold text-navy-800 text-sm">{{ $testimonial->author_name }}</p>
+                            <p class="text-xs text-slate-600">{{ $testimonial->author_role }} {{ $testimonial->author_grade ? ', ' . $testimonial->author_grade : '' }}</p>
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                <div class="col-span-3 text-center py-8 text-gray-500">
+                    No testimonials available yet.
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    {{-- LATEST NEWS --}}
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-gold-500 text-sm font-semibold uppercase tracking-wider">Stay Updated</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-800 mt-2 font-heading">Latest News</h2>
+                </div>
+                <a href="/news" class="hidden sm:inline-flex items-center gap-1 text-navy-800 font-semibold hover:text-gold-500 transition-colors">
+                    View All News <span>→</span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                @forelse($latestNews ?? [] as $newsItem)
+                <a href="/news/{{ $newsItem->slug }}" class="group block rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="aspect-[16/10] bg-gray-100 overflow-hidden relative">
+                        @if($newsItem->featured_image)
+                            <img src="{{ Storage::url($newsItem->featured_image) }}" alt="{{ $newsItem->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        @else
+                            <div class="w-full h-full bg-navy-900/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                                <span class="text-4xl">📰</span>
+                            </div>
+                        @endif
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm">
+                            <span class="text-xs font-bold text-navy-800">{{ $newsItem->published_at ? $newsItem->published_at->format('M d, Y') : $newsItem->created_at->format('M d, Y') }}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        @if($newsItem->category)
+                            <span class="text-xs font-bold text-gold-500 uppercase tracking-wider mb-2 block">{{ $newsItem->category->name }}</span>
+                        @endif
+                        <h3 class="text-xl font-bold text-navy-800 mb-3 font-heading group-hover:text-gold-500 transition-colors line-clamp-2">{{ $newsItem->title }}</h3>
+                        <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">{{ $newsItem->excerpt ?? Str::limit(strip_tags($newsItem->body), 120) }}</p>
+                    </div>
+                </a>
+                @empty
+                <div class="col-span-3 text-center py-12 bg-slate-50 rounded-2xl border border-gray-100">
+                    <span class="text-4xl block mb-3">📰</span>
+                    <p class="text-gray-500">No news articles published yet.</p>
+                </div>
+                @endforelse
+            </div>
+            
+            <div class="mt-10 text-center sm:hidden">
+                <a href="/news" class="inline-flex items-center gap-1 text-navy-800 font-semibold border-b-2 border-navy-800 pb-1">
+                    View All News <span>→</span>
+                </a>
             </div>
         </div>
     </section>
