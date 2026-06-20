@@ -2,6 +2,7 @@
 use App\Domain\Website\Models\LeadershipProfile;
 use App\Domain\Website\Models\Faq;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 
 name('about');
 

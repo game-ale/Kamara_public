@@ -1,6 +1,7 @@
 <?php
 use App\Domain\Website\Models\News;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 
 name('news.index');
 
