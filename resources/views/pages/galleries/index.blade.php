@@ -4,7 +4,11 @@ use function Laravel\Folio\name;
 
 name('galleries.index');
 
-$galleries = Gallery::where('is_published', true)->orderBy('published_at', 'desc')->paginate(12);
+render(function (\Illuminate\View\View $view) {
+    $galleries = Gallery::where('is_published', true)->orderBy('published_at', 'desc')->paginate(12);
+
+    return $view->with('galleries', $galleries);
+});
 ?>
 <x-layouts.app title="Gallery | Kamara School">
     {{-- PAGE HEADER --}}

@@ -4,7 +4,11 @@ use function Laravel\Folio\name;
 
 name('news.index');
 
-$news = News::with('category')->where('is_published', true)->orderBy('published_at', 'desc')->paginate(9);
+render(function (\Illuminate\View\View $view) {
+    $news = News::with('category')->where('is_published', true)->orderBy('published_at', 'desc')->paginate(9);
+
+    return $view->with('news', $news);
+});
 ?>
 <x-layouts.app title="News & Updates | Kamara School">
     {{-- PAGE HEADER --}}

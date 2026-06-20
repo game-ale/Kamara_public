@@ -1,10 +1,14 @@
 <?php
 use App\Domain\Website\Models\Event;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 
 name('events.show');
 
-$event = Event::where('slug', $slug)->where('is_published', true)->firstOrFail();
+render(function (\Illuminate\View\View $view, $slug) {
+    $event = Event::where('slug', $slug)->where('is_published', true)->firstOrFail();
+    return $view->with('event', $event);
+});
 ?>
 <x-layouts.app :title="$event->title . ' | Kamara School'">
     {{-- EVENT HEADER --}}

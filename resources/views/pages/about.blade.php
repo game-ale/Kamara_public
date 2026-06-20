@@ -5,8 +5,12 @@ use function Laravel\Folio\name;
 
 name('about');
 
-$leadership = LeadershipProfile::orderBy('display_order')->get();
-$faqs = Faq::where('is_published', true)->orderBy('sort_order')->get();
+render(function (\Illuminate\View\View $view) {
+    $leadership = LeadershipProfile::orderBy('display_order')->get();
+    $faqs = Faq::where('is_published', true)->orderBy('sort_order')->get();
+
+    return $view->with('leadership', $leadership)->with('faqs', $faqs);
+});
 ?>
 <x-layouts.app title="About Us | Kamara School">
     {{-- PAGE HEADER --}}

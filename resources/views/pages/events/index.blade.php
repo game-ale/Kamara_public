@@ -1,18 +1,23 @@
 <?php
 use App\Domain\Website\Models\Event;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 
 name('events.index');
 
-$events = Event::where('is_published', true)
-                ->orderBy('starts_at', 'asc')
-                ->whereDate('ends_at', '>=', today())
-                ->orWhere(function ($q) {
-                    $q->where('is_published', true)
-                      ->whereNull('ends_at')
-                      ->whereDate('starts_at', '>=', today());
-                })
-                ->paginate(9);
+render(function (\Illuminate\View\View $view) {
+    $events = Event::where('is_published', true)
+                    ->orderBy('starts_at', 'asc')
+                    ->whereDate('ends_at', '>=', today())
+                    ->orWhere(function ($q) {
+                        $q->where('is_published', true)
+                          ->whereNull('ends_at')
+                          ->whereDate('starts_at', '>=', today());
+                    })
+                    ->paginate(9);
+
+    return $view->with('events', $events);
+});
 ?>
 <x-layouts.app title="Events | Kamara School">
     {{-- PAGE HEADER --}}

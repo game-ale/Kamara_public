@@ -1,11 +1,15 @@
 <?php
 use App\Domain\Website\Models\Gallery;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 use Illuminate\Support\Facades\Storage;
 
 name('galleries.show');
 
-$gallery = Gallery::where('slug', $slug)->where('is_published', true)->firstOrFail();
+render(function (\Illuminate\View\View $view, $slug) {
+    $gallery = Gallery::where('slug', $slug)->where('is_published', true)->firstOrFail();
+    return $view->with('gallery', $gallery);
+});
 ?>
 <x-layouts.app :title="$gallery->title . ' | Kamara School'">
     {{-- GALLERY HEADER --}}

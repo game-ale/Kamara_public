@@ -1,11 +1,15 @@
 <?php
 use App\Domain\Website\Models\News;
 use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 use Illuminate\Support\Facades\Storage;
 
 name('news.show');
 
-$newsItem = News::where('slug', $slug)->where('is_published', true)->firstOrFail();
+render(function (\Illuminate\View\View $view, $slug) {
+    $newsItem = News::where('slug', $slug)->where('is_published', true)->firstOrFail();
+    return $view->with('newsItem', $newsItem);
+});
 ?>
 <x-layouts.app :title="$newsItem->title . ' | Kamara School'">
     {{-- ARTICLE HEADER --}}
