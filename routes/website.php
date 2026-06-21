@@ -7,4 +7,7 @@ Route::middleware(['web'])->group(function () {
     // SEO routes
     Route::get('/sitemap.xml', [\App\Http\Controllers\Website\SitemapController::class, 'index'])->name('sitemap');
     Route::get('/robots.txt', [\App\Http\Controllers\Website\RobotsController::class, 'index'])->name('robots');
+
+    // Media proxy for private Supabase bucket images
+    Route::get('/media', \App\Http\Controllers\Website\MediaProxyController::class)->name('media.proxy');
 });

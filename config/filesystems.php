@@ -67,7 +67,10 @@ return [
             'region' => env('SUPABASE_REGION', 'us-east-1'),
             'bucket' => env('SUPABASE_BUCKET', 'kamara-media'),
             'endpoint' => env('SUPABASE_ENDPOINT'),
+            'url' => env('SUPABASE_URL'),
             'use_path_style_endpoint' => true,
+            'throw' => false,
+            'report' => false,
         ],
 
     ],

@@ -173,5 +173,14 @@
     </footer>
 
     @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/g53b82FvM0tG-xZgPHJpXyK1U5w08vU4BqZ7yR2bQ2xX-B2bK0P2r-1W41y-2Wp2q4Gv5r9zR4M8H-02bGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener('livewire:navigated', () => {
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+        });
+    </script>
 </body>
 </html>

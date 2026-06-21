@@ -63,7 +63,7 @@ render(function (\Illuminate\View\View $view) {
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                     <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative">
                         @if($leader->photo)
-                            <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ route('media.proxy', ['path' => $leader->photo]) }}" alt="{{ $leader->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @else
                             <div class="w-full h-full flex items-center justify-center bg-navy-900/5 group-hover:scale-105 transition-transform duration-500">
                                 <span class="text-6xl text-navy-800/20 font-bold">{{ substr($leader->name, 0, 1) }}</span>

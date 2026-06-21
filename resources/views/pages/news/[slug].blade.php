@@ -35,7 +35,7 @@ render(function (\Illuminate\View\View $view, $slug) {
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             @if($newsItem->featured_image)
             <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="{{ Storage::url($newsItem->featured_image) }}" alt="{{ $newsItem->title }}" class="w-full h-auto object-cover max-h-[600px]">
+                <img src="{{ route('media.proxy', ['path' => $newsItem->featured_image]) }}" alt="{{ $newsItem->title }}" class="w-full h-auto object-cover max-h-[600px]">
             </div>
             @endif
 

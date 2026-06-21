@@ -1,19 +1,23 @@
 <div>
     {{-- HERO SECTION --}}
     <section class="relative bg-navy-900 overflow-hidden min-h-[85vh] flex items-center">
-        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 opacity-90"></div>
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.08) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.06) 0%, transparent 50%);"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gold-500/15 text-gold-400 text-xs font-semibold rounded-full mb-6 tracking-wide uppercase">
+        <!-- Video Background -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="{{ asset('Vedios/Hero.mp4') }}" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900/95 via-navy-900/80 to-navy-800/90 z-10"></div>
+        <div class="absolute inset-0 z-10" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.15) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.1) 0%, transparent 50%);"></div>
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="drop-shadow-2xl">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gold-500/20 text-gold-400 text-xs font-bold rounded-full mb-6 tracking-wide uppercase backdrop-blur-md border border-gold-500/30">
                     🏆 Ranked #1 Private School in Adama
                 </span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
                     Shaping Future
-                    <span class="text-gold-400">Leaders</span>
+                    <span class="text-gold-400 drop-shadow-[0_2px_8px_rgba(212,160,23,0.4)]">Leaders</span>
                     Through Excellence
                 </h1>
-                <p class="mt-6 text-lg text-gray-300 leading-relaxed max-w-xl">
+                <p class="mt-6 text-lg text-gray-200 leading-relaxed max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-medium">
                     Kamara School provides world-class KG to Grade 12 education, combining academic rigor with character development in the heart of Adama, Ethiopia.
                 </p>
                 <div class="mt-10 flex flex-wrap gap-4">
@@ -25,25 +29,38 @@
                     </a>
                 </div>
             </div>
-            <div class="hidden lg:block">
-                <div class="relative">
-                    <div class="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-navy-700 to-navy-800 border border-white/10 flex items-center justify-center shadow-2xl">
-                        <div class="text-center p-8">
-                            <div class="w-24 h-24 bg-gold-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <span class="text-gold-400 text-5xl font-bold font-heading">K</span>
-                            </div>
-                            <p class="text-white/60 text-sm">Campus Photo</p>
+            {{-- Floating Stats Cards --}}
+            <div class="hidden lg:flex flex-col gap-5 items-end">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl w-64" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-white">98% Pass Rate</p>
+                            <p class="text-xs text-gray-300">National Exam 2025</p>
                         </div>
                     </div>
-                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div>
-                                <p class="text-sm font-bold text-navy-800">98% Pass Rate</p>
-                                <p class="text-xs text-gray-500">National Exam 2025</p>
-                            </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl w-72" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center">
+                            <span class="text-gold-400 text-xl">🎓</span>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-white">1,200+ Students</p>
+                            <p class="text-xs text-gray-300">KG through Grade 12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl w-60" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <span class="text-blue-400 text-xl">🏫</span>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-white">15+ Years</p>
+                            <p class="text-xs text-gray-300">Of Excellence</p>
                         </div>
                     </div>
                 </div>
@@ -68,10 +85,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach([['1,200+', 'Students Enrolled', '📚'], ['15+', 'Years of Excellence', '🏫'], ['98%', 'University Placement', '🎓'], ['50+', 'Qualified Teachers', '👨‍🏫']] as $stat)
-                <div class="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <span class="text-3xl mb-2 block">{{ $stat[2] }}</span>
-                    <p class="text-3xl sm:text-4xl font-bold text-navy-800 font-heading">{{ $stat[0] }}</p>
-                    <p class="text-sm text-slate-600 mt-1">{{ $stat[1] }}</p>
+                <div class="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 transform-gpu" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                    <span class="text-3xl mb-2 block" style="transform: translateZ(20px)">{{ $stat[2] }}</span>
+                    <p class="text-3xl sm:text-4xl font-bold text-navy-800 font-heading" style="transform: translateZ(30px)">{{ $stat[0] }}</p>
+                    <p class="text-sm text-slate-600 mt-1" style="transform: translateZ(10px)">{{ $stat[1] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -95,10 +112,10 @@
                     ['🎨', 'Arts & Culture', 'Rich extracurricular programs including music, drama, visual arts, and cultural festivals.'],
                     ['🛡️', 'Safe Environment', 'Secure campus with trained counselors, health services, and a zero-tolerance anti-bullying policy.'],
                 ] as $feature)
-                <div class="group p-8 rounded-2xl border border-gray-100 hover:border-gold-400/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white">
-                    <span class="text-4xl">{{ $feature[0] }}</span>
-                    <h3 class="text-xl font-bold text-navy-800 mt-4 font-heading">{{ $feature[1] }}</h3>
-                    <p class="text-slate-600 mt-3 text-sm leading-relaxed">{{ $feature[2] }}</p>
+                <div class="group p-8 rounded-2xl border border-gray-100 hover:border-gold-400/50 hover:shadow-xl transition-all duration-300 bg-white transform-gpu preserve-3d" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.15">
+                    <span class="text-4xl inline-block" style="transform: translateZ(30px)">{{ $feature[0] }}</span>
+                    <h3 class="text-xl font-bold text-navy-800 mt-4 font-heading" style="transform: translateZ(20px)">{{ $feature[1] }}</h3>
+                    <p class="text-slate-600 mt-3 text-sm leading-relaxed" style="transform: translateZ(10px)">{{ $feature[2] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -118,11 +135,11 @@
                     ['Primary School', 'Grades 1-8', 'Comprehensive curriculum building strong foundations in core subjects with enrichment activities.', '/programs/primary'],
                     ['Secondary School', 'Grades 9-12', 'University preparatory program with specialized streams in Natural Science and Social Science.', '/programs/secondary'],
                 ] as $program)
-                <div class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
-                    <span class="text-gold-400 text-xs font-semibold uppercase tracking-wider">{{ $program[1] }}</span>
-                    <h3 class="text-xl font-bold text-white mt-3 font-heading">{{ $program[0] }}</h3>
-                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">{{ $program[2] }}</p>
-                    <a href="{{ $program[3] }}" class="inline-flex items-center gap-1 mt-6 text-gold-400 text-sm font-semibold hover:text-gold-100 transition group-hover:gap-2">
+                <div class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 preserve-3d" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                    <span class="text-gold-400 text-xs font-semibold uppercase tracking-wider block" style="transform: translateZ(20px)">{{ $program[1] }}</span>
+                    <h3 class="text-xl font-bold text-white mt-3 font-heading" style="transform: translateZ(30px)">{{ $program[0] }}</h3>
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed" style="transform: translateZ(10px)">{{ $program[2] }}</p>
+                    <a href="{{ $program[3] }}" class="inline-flex items-center gap-1 mt-6 text-gold-400 text-sm font-semibold hover:text-gold-100 transition group-hover:gap-2" style="transform: translateZ(20px)">
                         Learn More <span>→</span>
                     </a>
                 </div>
@@ -180,7 +197,7 @@
                 <a href="/news/{{ $newsItem->slug }}" class="group block rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <div class="aspect-[16/10] bg-gray-100 overflow-hidden relative">
                         @if($newsItem->featured_image)
-                            <img src="{{ Storage::url($newsItem->featured_image) }}" alt="{{ $newsItem->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ route('media.proxy', ['path' => $newsItem->featured_image]) }}" alt="{{ $newsItem->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @else
                             <div class="w-full h-full bg-navy-900/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                                 <span class="text-4xl">📰</span>

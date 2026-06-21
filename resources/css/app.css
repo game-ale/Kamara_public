@@ -30,3 +30,9 @@
         -webkit-font-smoothing: antialiased;
     }
 }
+
+@layer utilities {
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
+}

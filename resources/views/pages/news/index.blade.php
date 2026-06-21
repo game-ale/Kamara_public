@@ -28,7 +28,7 @@ render(function (\Illuminate\View\View $view) {
                 <a href="/news/{{ $newsItem->slug }}" class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                     <div class="aspect-[16/10] bg-gray-100 overflow-hidden relative shrink-0">
                         @if($newsItem->featured_image)
-                            <img src="{{ Storage::url($newsItem->featured_image) }}" alt="{{ $newsItem->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ route('media.proxy', ['path' => $newsItem->featured_image]) }}" alt="{{ $newsItem->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @else
                             <div class="w-full h-full bg-navy-900/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                                 <span class="text-4xl">📰</span>
