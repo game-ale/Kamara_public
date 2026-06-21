@@ -30,22 +30,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">First Name *</label>
-                            <input type="text" wire:model="studentFirstName" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="text" wire:model="studentFirstName" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('studentFirstName') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Last Name *</label>
-                            <input type="text" wire:model="studentLastName" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="text" wire:model="studentLastName" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('studentLastName') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Date of Birth *</label>
-                            <input type="date" wire:model="studentDob" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="date" wire:model="studentDob" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('studentDob') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Gender *</label>
-                            <select wire:model="studentGender" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <select wire:model="studentGender" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-navy-800 mb-1">Applying for Grade *</label>
-                            <select wire:model="applyingGrade" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <select wire:model="applyingGrade" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                                 <option value="KG1">KG 1</option>
                                 <option value="KG2">KG 2</option>
                                 <option value="KG3">KG 3</option>
@@ -74,17 +74,17 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">First Name *</label>
-                            <input type="text" wire:model="parentFirstName" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="text" wire:model="parentFirstName" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('parentFirstName') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Last Name *</label>
-                            <input type="text" wire:model="parentLastName" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="text" wire:model="parentLastName" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('parentLastName') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Relationship to Student *</label>
-                            <select wire:model="parentRelation" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <select wire:model="parentRelation" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                                 <option value="Mother">Mother</option>
                                 <option value="Father">Father</option>
                                 <option value="Guardian">Guardian</option>
@@ -93,17 +93,17 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Email Address *</label>
-                            <input type="email" wire:model="parentEmail" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="email" wire:model="parentEmail" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('parentEmail') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-navy-800 mb-1">Phone Number *</label>
-                            <input type="tel" wire:model="parentPhone" placeholder="+251 911 000000" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
+                            <input type="tel" wire:model="parentPhone" placeholder="+251 911 000000" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500">
                             @error('parentPhone') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-navy-800 mb-1">Physical Address *</label>
-                            <textarea wire:model="parentAddress" rows="3" class="w-full border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500"></textarea>
+                            <textarea wire:model="parentAddress" rows="3" class="w-full border border-gray-300 rounded-lg focus:ring-gold-500 focus:border-gold-500"></textarea>
                             @error('parentAddress') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                     </div>
