@@ -24,10 +24,8 @@
             <div class="flex items-center justify-between h-20">
                 {{-- Logo --}}
                 <a href="/" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                        <span class="text-gold-400 font-bold text-xl font-heading">K</span>
-                    </div>
-                    <div>
+                    <img src="{{ asset('images/logo.png') }}" alt="Kamara School Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform">
+                    <div class="hidden sm:block">
                         <span class="text-navy-800 font-bold text-xl font-heading tracking-tight">Kamara</span>
                         <span class="block text-xs text-slate-600 -mt-0.5 tracking-wide uppercase">School</span>
                     </div>
@@ -101,9 +99,7 @@
                 {{-- Brand --}}
                 <div class="lg:col-span-1">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 bg-gold-500 rounded-xl flex items-center justify-center">
-                            <span class="text-white font-bold text-lg font-heading">K</span>
-                        </div>
+                        <img src="{{ asset('images/logo.png') }}" alt="Kamara School Logo" class="h-12 w-auto object-contain bg-white rounded-lg p-1">
                         <span class="text-white font-bold text-lg font-heading">Kamara School</span>
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed mb-6">
