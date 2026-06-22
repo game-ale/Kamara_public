@@ -23,9 +23,7 @@ class MediaProxyController extends Controller
 
         $disk = Storage::disk('supabase');
 
-        if (!$disk->exists($path)) {
-            abort(404);
-        }
+        // Removed $disk->exists() check to eliminate slow synchronous network calls to S3
 
         // Generate a 1-hour signed URL and redirect browser to it
         $temporaryUrl = $disk->temporaryUrl($path, now()->addHour());
