@@ -9,9 +9,7 @@
         <div class="absolute inset-0 z-10" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.15) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.1) 0%, transparent 50%);"></div>
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-16 items-center">
             <div class="drop-shadow-2xl">
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gold-500/20 text-gold-400 text-xs font-bold rounded-full mb-6 tracking-wide uppercase backdrop-blur-md border border-gold-500/30">
-                    🏆 Ranked #1 Private School in Adama
-                </span>
+
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
                     Shaping Future
                     <span class="text-gold-400 drop-shadow-[0_2px_8px_rgba(212,160,23,0.4)]">Leaders</span>
