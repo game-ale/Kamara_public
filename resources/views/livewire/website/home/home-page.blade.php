@@ -3,7 +3,7 @@
     <section class="relative bg-navy-900 overflow-hidden min-h-[85vh] flex items-center">
         <!-- Video Background -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-            <source src="{{ asset('Vedios/Hero.mp4') }}" type="video/mp4">
+            <source src="{{ asset('videos/hero-background.mp4') }}" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-br from-navy-900/95 via-navy-900/80 to-navy-800/90 z-10"></div>
         <div class="absolute inset-0 z-10" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.15) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.1) 0%, transparent 50%);"></div>
