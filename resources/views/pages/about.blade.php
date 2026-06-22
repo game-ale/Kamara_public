@@ -37,12 +37,12 @@ render(function (\Illuminate\View\View $view) {
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-4">
                         <div class="bg-slate-100 rounded-2xl aspect-[4/5] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                            <img src="{{ asset('images/about/students-classroom.png') }}" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="space-y-4 pt-8">
                         <div class="bg-slate-100 rounded-2xl aspect-[4/5] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                            <img src="{{ asset('images/about/students-lunch.png') }}" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
