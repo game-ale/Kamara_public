@@ -5,8 +5,8 @@
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
             <source src="{{ asset('videos/hero-background.mp4') }}" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-gradient-to-br from-navy-900/60 via-navy-900/40 to-navy-800/50 z-10"></div>
-        <div class="absolute inset-0 z-10" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.15) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.1) 0%, transparent 50%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900/40 via-navy-900/20 to-navy-800/30 z-10"></div>
+        <div class="absolute inset-0 z-10" style="background-image: radial-gradient(circle at 25% 50%, rgba(212,160,23,0.1) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(184,134,11,0.05) 0%, transparent 50%);"></div>
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-16 items-center">
             <div class="drop-shadow-2xl">
 
