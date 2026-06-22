@@ -18,7 +18,10 @@ class WebsiteSettingSeeder extends Seeder
         ];
 
         foreach ($settings as $setting) {
-            WebsiteSetting::create($setting);
+            WebsiteSetting::updateOrCreate(
+                ['group' => $setting['group'], 'key' => $setting['key']],
+                ['value' => $setting['value']]
+            );
         }
     }
 }
